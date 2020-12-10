@@ -16,7 +16,7 @@
 
     <header class="page-header" role="banner">
       <h1 class="project-name">{{ site.github.repository_name }}</h1>
-      <p class="project-release">Release: {{ site.github.latest_release }} (<a href="{{ site.github.releases_url }}">all Releases</a>)</p>
+      <p class="project-release">Release: {{ site.github.latest_release.tag_name }} (<a href="{{ site.github.releases_url }}">all Releases</a>)</p>
       <h2 class="project-tagline">{{ site.github.project_tagline }}</h2>
       {% if site.github.is_project_page %}
         <a href="{{ site.github.repository_url }}" class="btn-transparent">View on GitHub</a>
