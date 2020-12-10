@@ -2,3 +2,89 @@
 ---
 
 @import 'jekyll-theme-cayman';
+
+@media screen and (min-width: 85em){
+    .main-content {
+        max-width: 85rem;
+    }
+}
+.page-header a:link,
+.page-header a:visited {
+    text-decoration: none;
+    color:#fff;
+}
+.page-header a:hover,
+.page-header a:active,
+.page-header a:visited {
+    text-decoration: underline;
+}
+.main-content a:link,
+.main-content a:visited {
+    text-decoration: none;
+    color:#159957;
+}
+.main-content a:hover,
+.main-content a:focus,
+.main-content a:active {
+    text-decoration: none;
+    color:#159957;
+}
+.main-content h1,
+.main-content h2,
+.main-content h3,
+.main-content h4,
+.main-content h5 {
+    clear:both;
+}
+.main-content h3 {
+    padding-top: 40px;
+}
+img.float-left {
+    float: left;
+    width:50%;
+    margin-right:25px;
+}
+.site-footer {
+    clear:both;
+}
+.btn-transparent {
+    display: inline-block;
+    margin-bottom: 1rem;
+    padding: 0.75rem 1rem;
+    color: rgba(255,255,255,0.7);
+    background-color: rgba(255,255,255,0.08);
+    border-color: rgba(255,255,255,0.2);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 0.3rem;
+    transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+    text-decoration: none;
+}
+.btn-transparent:hover {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    background-color: rgba(255,255,255,0.2);
+    border-color: rgba(255,255,255,0.3);
+    text-decoration: none;
+}
+.main-content ul.nav-tabs {
+    margin-top:40px;
+}
+ul.nav-tabs .nav-item.show .nav-link,
+ul.nav-tabs .nav-link.active {
+    background:#e7e7e7;
+    border-color: transparent;
+}
+.tab-content {
+    background:#e7e7e7;
+    padding:25px;
+}
+.tab-pane {
+    
+}
+.tab-pane li {
+    font-size:0.8em;
+}
+#meta-info {
+    margin-bottom:25px;
+}

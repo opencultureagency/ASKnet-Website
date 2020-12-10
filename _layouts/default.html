@@ -1,41 +1,170 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
   <head>
-
-    {% if site.google_analytics %}
-      <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', '{{ site.google_analytics }}');
-      </script>
-    {% endif %}
     <meta charset="UTF-8">
-
-{% seo %}
+    {% seo %}
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <link rel="stylesheet" href="{{ 'assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <link rel="stylesheet" href="{{ 'assets/css/font-awesome-all.css' }}">
+    <link rel="stylesheet" href="{{ 'assets/css/bootstrap.min.css' }}" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="{{ 'assets/js/bootstrap.bundle.min.js' }}" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
   </head>
   <body>
     <a id="skip-to-content" href="#content">Skip to the content.</a>
 
     <header class="page-header" role="banner">
-      <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
-      <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
+      <h1 class="project-name">{{ site.github.repository_name }}</h1>
+      <p class="project-release">Release: {{ site.github.latest_release }} (<a href="{{ site.github.releases_url }}">all Releases</a>)</p>
+      <h2 class="project-tagline">{{ site.github.project_tagline }}</h2>
       {% if site.github.is_project_page %}
-        <a href="{{ site.github.repository_url }}" class="btn">View on GitHub</a>
+        <a href="{{ site.github.repository_url }}" class="btn-transparent">View on GitHub</a>
       {% endif %}
       {% if site.show_downloads %}
-        <a href="{{ site.github.zip_url }}" class="btn">Download .zip</a>
-        <a href="{{ site.github.tar_url }}" class="btn">Download .tar.gz</a>
+        <a href="{{ site.github.zip_url }}" class="btn-transparent">Download .zip</a>
+        <a href="{{ site.github.tar_url }}" class="btn-transparent">Download .tar.gz</a>
       {% endif %}
-        <a href="{{ site.github.repository_url }}/issues/new" class="btn">Create Issue</a>
+        <a href="#" class="btn-transparent" role="button">Download as PDF</a>
+        <a href="{{ site.github.repository_url }}/issues/new" class="btn-transparent" role="button">Create Issue</a>
+        
     </header>
 
     <main id="content" class="main-content" role="main">
+      <div id="meta-info" class="row">
+        <div class="col-md-6">
+          <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="{{ 'assets/img/ZAC+_Kathodentester-Zelle_1.jpg' }}" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="{{ 'assets/img/ZAC+_Kathodentester-Zelle_2.jpg' }}" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="{{ 'assets/img/ZAC+_Kathodentester-Zelle_3.jpg' }}" class="d-block w-100" alt="...">
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <table class="table table-striped table-hover" width="100%">
+              <td width="50%"><i class="fas fa-address-card"></i> Difficulty</td>
+              <td width="50%">Average</td>
+            </tr>
+            <tr>
+              <td width="50%"><i class="far fa-clock"></i> Duration</td>
+              <td>1 Day(s)</td>
+            </tr>
+            <tr>
+              <td><i class="fa fa-tag"></i> Categories</td>
+              <td>Energy, Sience & Biology</td>
+            </tr>
+            <tr>
+              <td><i class="fas fa-money-bill-wave"></i> Costs</td>
+              <td>50 EUR (€)</td>
+            </tr>
+            <tr>
+              <td><i class="fas fa-language"></i> Languages</td>
+              <td>German <i class="fas fa-check-circle"></i> | ‎English <i class="fas fa-check-circle"></i></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="description">
+        <h2>Einführung</h2>
+        <p>Der Kathodentester ist ein Teilprojekt der Zn/O-Brennstoffzelle. Mit diesem Kathodentester können die Entwickler kostengünstig Gaskathoden testen. Er ist einfach zu bauen und kann als eine einheitliche Testumgebung für quantitative Vergleiche benutzt werden.</p>
+        <p>Der Kathodentester ist einfacher gebaut als eine gewöhnliche Zn/O-Brennstoffzelle. Er ist eine Kammer ohne automatische Zuführungen und Ableitungen für Zink und Elektrolyt. Stattdessen werden Zink und Elektrolyt manuell von oben befüllt.</p>
+        <p>Getestet werden sollen damit vor allem:</p>
+        <ul>
+            <li>Gaskathoden — sowohl aus eigener Herstellung als auch kommerzielle Versionen</li>
+            <li>Anoden — z.B. einfache Zinkplatte, oder poröse Platte aus verpresstem Zinkpulver</li>
+            <li>Dichtungen — z.B. Flachdichtung aus EPDM</li>
+        </ul>
+      </div>
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Werkzeuge und Material</a>
+        </li>
+        <li class="nav-item" role="presentation">
+          <a class="nav-link" id="tutorials-tab" data-bs-toggle="tab" href="#tutorials" role="tab" aria-controls="tutorials" aria-selected="false">Vorrausgesetzte Tutorials</a>
+        </li>
+        <li class="nav-item" role="presentation">
+          <a class="nav-link" id="files-tab" data-bs-toggle="tab" href="#files" role="tab" aria-controls="files" aria-selected="false">Dateien</a>
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+          <div class="row">
+            <div class="col-md-6">
+              <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="{{ 'assets/img/ZAC+_Kathodentester-Zelle_1.jpg' }}" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="{{ 'assets/img/ZAC+_Kathodentester-Zelle_2.jpg' }}" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="{{ 'assets/img/ZAC+_Kathodentester-Zelle_3.jpg' }}" class="d-block w-100" alt="...">
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <h4>Material</h4>
+              <ul>
+                <li>Zink</li>
+                <li>Gehäuse</li>
+                <li>Abdichtung</li>
+                <li>MOC Gaskathode</li>
+                <li>Dichtungskleber</li>
+                <li>Paketband & blaues Masking-Tape</li>
+                <li>Maschinenschrauben + Muttern + Unterlegscheiben</li>
+                <li>Pappe (Messeschild z.B.)</li>
+                <li>(unvollständig)</li>
+              </ul>
+              <h4>Werkzeuge</h4>
+              <ul>
+                <li>(Lasercutter - oder beim Hobbyhimmel fertigen)</li>
+                <li>Cutter</li>
+                <li>Winkelschleifer</li>
+                <li>Messleiste</li>
+                <li>Stift</li>
+                <li>Schere</li>
+                <li>(unvollständig)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="tutorials" role="tabpanel" aria-labelledby="tutorials-tab">
+          <ul class="list-group">
+            <li class="list-group-item">Open Workshop Setup</li>
+          </ul>
+        </div>
+        <div class="tab-pane fade" id="files" role="tabpanel" aria-labelledby="files-tab">
+          <ul class="list-group">
+            <li class="list-group-item">https://github.com/case06/ZACplus</li>
+            <li class="list-group-item">https://wiki.opensourceecology.de/Kathodentester</li>
+          </ul>
+        </div>
+      </div>
       {{ content }}
 
       <footer class="site-footer">
